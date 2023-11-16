@@ -1,7 +1,7 @@
 import {useState, useEffect } from 'react'
 
 
-const PokeList = () => {
+const PokeList = ({setSelectedPokemonId}) => {
 	const [pokemonList,setPokemonList] = useState([]);
 
 	useEffect(()=> {
@@ -24,7 +24,9 @@ const PokeList = () => {
 			<h1>List of Pokemon</h1>
 			<section>
 				{pokemonList.map((pokemon)=> {
-					return <p key={pokemon.name}>{pokemon.name}</p>
+					return <p key={pokemon.name} onClick={()=> {
+						setSelectedPokemonId(pokemon.name)
+					}}>{pokemon.name}</p>
 				})}
 			</section>
 			{/* {console.log(pokemonList)} */}

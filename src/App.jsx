@@ -1,4 +1,5 @@
 import PokeList from './components/PokeList.jsx'
+import SelectedPokemon from './components/SelectedPokemon.jsx'
 import { useState } from 'react'
 import './App.css'
 
@@ -19,8 +20,8 @@ const [selectedPokemonId, setSelectedPokemonId] = useState(null)
 
   return (
     <> { !selectedPokemonId ? 
-			<PokeList /> : 
-			<div>Pokemon Card to be built</div>}
+			<PokeList setSelectedPokemonId={setSelectedPokemonId}/> : 
+			<SelectedPokemon selectedPokemonId = {selectedPokemonId} setSelectedPokemonId={setSelectedPokemonId} />}
     </>
   )
 }
