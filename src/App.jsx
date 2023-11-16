@@ -1,4 +1,5 @@
-
+import PokeList from './components/PokeList.jsx'
+import { useState } from 'react'
 import './App.css'
 
 // Component to get list of pokemon
@@ -14,10 +15,12 @@ import './App.css'
 // Create form to add new pokemon to the array
 
 function App() {
-
+const [selectedPokemonId, setSelectedPokemonId] = useState(null)
 
   return (
-    <>
+    <> { !selectedPokemonId ? 
+			<PokeList /> : 
+			<div>Pokemon Card to be built</div>}
     </>
   )
 }
