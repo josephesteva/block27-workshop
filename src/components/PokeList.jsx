@@ -1,8 +1,7 @@
 import {useState, useEffect } from 'react'
 
 
-const PokeList = ({setSelectedPokemonId}) => {
-	const [pokemonList,setPokemonList] = useState([]);
+const PokeList = ({setSelectedPokemonId, pokemonList, setPokemonList}) => {
 
 	useEffect(()=> {
 		try {
